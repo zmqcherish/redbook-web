@@ -43,7 +43,7 @@ python redbook.py
 ```
 3. 将手机连接电脑代理，iPhone方法为：设置 -> 无线局域网 -> (点击编辑) -> 配置代理 -> 手动 -> 填写上一步中的IP和端口号，Android手机类似，可自行查阅
 4. 用Safari 浏览器访问 mitm.it 进行证书安装和信任，参考连接 [apple官网](https://support.apple.com/zh-cn/HT204477) 、[mitmproxy docs](https://docs.mitmproxy.org/stable/concepts-certificates/)
-5. 在手机浏览器访问：https://httpbin.org/json，如果出现以下结果，说明配置成功
+5. 在手机浏览器访问：[https://httpbin.org/json](https://httpbin.org/json)，如果出现以下结果，说明配置成功
 6. 打开小红书APP进入个人主页，按顺利浏览自己主页的帖子，直到结束
 
 # 修改web项目配置
@@ -57,7 +57,6 @@ AV.init({
 ```
 
 # 本地运行
-## 准备工作 - note环境
 1. 安装[node](http://nodejs.cn/)
 2. 安装相关依赖包
 ```
