@@ -4,7 +4,7 @@
 - 本项目为小红书个人定制网页版，出发点是方便在网页端查看小红书数据
 - 仅代表个人表示强烈谴责各大公司互不联网行为
 - 根据用户及个人使用情况，不定期完善项目功能
-- 本项目是我本人个人网站项目的子模块(redbook)，在线预览： [科学上网](https://web-zmqcherish.vercel.app/#/redbook) 或 [IP](http://121.5.254.139/#/redbook)
+- 本项目是我本人个人网站项目的子模块(redbook)，在线预览： [域名](https://web-zmqcherish.vercel.app/#/redbook)(需科学上网) 或 [IP](http://121.5.254.139/#/redbook)
 
 # 功能说明
 - 网页端展示小红书个人主页帖子
@@ -81,6 +81,7 @@ npm run build
 - [MDBootstrap](https://mdbootstrap.com/)
 - [LeanCloud](https://www.leancloud.cn/)
 - [mitmproxy](https://mitmproxy.org/)
+- [vercel](https://vercel.com/)
 - [vue3-waterfall-plugin](https://github.com/heikaimu/vue3-waterfall-plugin)
 
 
