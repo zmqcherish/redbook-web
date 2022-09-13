@@ -76,11 +76,12 @@ npm run build
 ## vercel
 ## github action
 
-# 相关技术栈
+# 感谢
 - [Vue.js](https://cn.vuejs.org/)
 - [MDBootstrap](https://mdbootstrap.com/)
 - [LeanCloud](https://www.leancloud.cn/)
 - [mitmproxy](https://mitmproxy.org/)
+- [vue3-waterfall-plugin](https://github.com/heikaimu/vue3-waterfall-plugin)
 
 
 # 免责声明
