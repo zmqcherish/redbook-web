@@ -19,7 +19,7 @@
 ## 本项目使用LeanCloud存储及获取数据，无需单独再部署后端服务
 1. 注册一个 [LeanCloud](https://www.leancloud.cn/) 账户，进入 [控制台](https://console.leancloud.cn/apps) 创建一个应用
 2. 在控制台 -> 数据存储 -> 结构化数据，创建Class，并设置相应权限。这里的class名称使用英文，后续需要使用
-![alt 创建Class](https://user-images.githubusercontent.com/6880848/190187160-99e9bc6d-b4bf-4b4b-8249-65c6651c4250.jpg)
+![alt 创建Class](https://user-images.githubusercontent.com/6880848/190187593-b6c734b3-bb7b-4203-ad4b-96d0d01754a7.jpg)
 3. 在控制台 -> 设置 -> 应用凭证 -> Credentials，获取后续python脚本及web应用需要的AppID, AppKey, MasterKey
 ![alt 获取相关配置](https://user-images.githubusercontent.com/6880848/190187072-95bd59a5-034d-4390-80ea-8ad48912cd0d.jpg)
 4. 在控制台 -> 设置 -> 应用凭证 -> 服务器地址，获取后续web应用需要的服务器地址serverURLs
