@@ -1,10 +1,12 @@
-# 本文档持续完善中... 2022.09.13
+# 本文档持续完善中... 2022.09.14
 
 # 说明
 - 本项目为小红书个人定制网页版，出发点是方便在网页端查看小红书数据
-- 仅代表个人表示强烈谴责各大公司互不联网行为
 - 根据用户及个人使用情况，不定期完善项目功能
+- 本项目涉及较多技术栈，对一部分人可能存在一定使用门槛
 - 本项目是我本人个人网站项目的子模块(redbook)，在线预览： [域名](https://web-zmqcherish.vercel.app/#/redbook)(需科学上网) 或 [IP](http://121.5.254.139/#/redbook)
+- 本文档持续完善中，一些技术细节没有详细描述。如需帮助，可提issue或微博联系[@甄星cherish](https://weibo.com/zmqcherish)
+- 仅代表个人表示强烈谴责各大公司互不联网行为
 
 # 功能说明
 - 网页端展示小红书个人主页帖子
@@ -17,19 +19,19 @@
 ## 本项目使用LeanCloud存储及获取数据，无需单独再部署后端服务
 1. 注册一个 [LeanCloud](https://www.leancloud.cn/) 账户，进入 [控制台](https://console.leancloud.cn/apps) 创建一个应用
 2. 在控制台 -> 数据存储 -> 结构化数据，创建Class，并设置相应权限。这里的class名称使用英文，后续需要使用
-![alt 创建Class](https://raw.githubusercontent.com/zmqcherish/redbook-web/main/imgs/lc_1.jpg)
+![alt 创建Class](https://user-images.githubusercontent.com/6880848/190187160-99e9bc6d-b4bf-4b4b-8249-65c6651c4250.jpg)
 3. 在控制台 -> 设置 -> 应用凭证 -> Credentials，获取后续python脚本及web应用需要的AppID, AppKey, MasterKey
-![alt 获取相关配置](https://raw.githubusercontent.com/zmqcherish/redbook-web/main/imgs/lc_2.jpg)
+![alt 获取相关配置](https://user-images.githubusercontent.com/6880848/190187072-95bd59a5-034d-4390-80ea-8ad48912cd0d.jpg)
 4. 在控制台 -> 设置 -> 应用凭证 -> 服务器地址，获取后续web应用需要的服务器地址serverURLs
-![alt 获取服务器地址](https://raw.githubusercontent.com/zmqcherish/redbook-web/main/imgs/lc_3.jpg)
+![alt 获取服务器地址](https://user-images.githubusercontent.com/6880848/190186824-bec8c81f-5b1e-4d4d-94da-a85f9656f5f3.jpg)
 
 # 准备工作 - python
 ## 使用python + mitmproxy 对小红书半自动化抓包
-1. 安装python及py目录下 [requirements.txt](https://raw.githubusercontent.com/zmqcherish/redbook-web/main/py/requirements.txt)文件中的包
+1. 安装python及py目录下 [requirements.txt](https://github.com/zmqcherish/redbook-web/blob/main/py/requirements.txt)文件中的包
 ```
 pip install -r requirements.txt
 ```
-2. 修改py目录下 [config.py](https://raw.githubusercontent.com/zmqcherish/redbook-web/main/py/config.py)文件中的配置，包括leancloud准备工作中的class名称、AppID、AppKey、 MasterKey，以及本机的IP地址和端口号，查看本机IP命令如下
+2. 修改py目录下 [config.py](https://github.com/zmqcherish/redbook-web/blob/main/py/config.py)文件中的配置，包括leancloud准备工作中的class名称、AppID、AppKey、 MasterKey，以及本机的IP地址和端口号，查看本机IP命令如下
 ```
 ipconfig
 ```
@@ -47,7 +49,7 @@ python redbook.py
 6. 打开小红书APP进入个人主页，按顺利浏览自己主页的帖子，直到结束
 
 # 修改web项目配置
-- 修改src目录下 [main.js](https://raw.githubusercontent.com/zmqcherish/redbook-web/main/src/main.js)文件中的配置，包括leancloud准备工作中的AppID、AppKey和服务器地址serverURLs
+- 修改src目录下 [main.js](https://github.com/zmqcherish/redbook-web/blob/main/src/main.js)文件中的配置，包括leancloud准备工作中的AppID、AppKey和服务器地址serverURLs
 ```
 AV.init({
 	serverURLs: '你的服务器地址',
@@ -71,10 +73,11 @@ npm run serve
 npm run build
 ```
 
-# 高级使用
+# 高级使用（文档待完善）
 
 ## vercel
 ## github action
+## Quantumult X
 
 # 感谢
 - [Vue.js](https://cn.vuejs.org/)
@@ -82,6 +85,7 @@ npm run build
 - [LeanCloud](https://www.leancloud.cn/)
 - [mitmproxy](https://mitmproxy.org/)
 - [vercel](https://vercel.com/)
+- [v-viewer](https://github.com/mirari/v-viewer)
 - [vue3-waterfall-plugin](https://github.com/heikaimu/vue3-waterfall-plugin)
 
 
