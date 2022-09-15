@@ -1,4 +1,4 @@
-# 本文档持续完善中... 2022.09.14
+# 本文档持续完善中... 2022.09.15
 
 # 说明
 - 本项目为小红书个人定制网页版，出发点是方便在网页端查看小红书数据
@@ -9,11 +9,13 @@
 - 仅代表个人表示强烈谴责各大公司互不联网行为
 
 # 功能说明
-- 网页端展示小红书个人主页帖子
-- 半自动化抓取小红书帖子
+- 网页端展示小红书个人主页帖子列表
+- 浏览单篇非视频帖子图片和文案
+- 视频帖子跳转到小红书页面
+- 半自动化抓取小红书帖子列表与详情
 - [TODO] 增加登录功能（非小红书登录）
 - [TODO] 增加收藏列表（登录后可查看）
-- [TODO] 抓取帖子详情
+- [TODO] 查看视频帖子
 
 # 准备工作 - LeanCloud
 ## 本项目使用LeanCloud存储及获取数据，无需单独再部署后端服务
@@ -45,8 +47,8 @@ python redbook.py
 ```
 3. 将手机连接电脑代理，iPhone方法为：设置 -> 无线局域网 -> (点击编辑) -> 配置代理 -> 手动 -> 填写上一步中的IP和端口号，Android手机类似，可自行查阅
 4. 用Safari 浏览器访问 mitm.it 进行证书安装和信任，参考连接 [apple官网](https://support.apple.com/zh-cn/HT204477) 、[mitmproxy docs](https://docs.mitmproxy.org/stable/concepts-certificates/)
-5. 在手机浏览器访问：[https://httpbin.org/json](https://httpbin.org/json)，如果出现以下结果，说明配置成功
-6. 打开小红书APP进入个人主页，按顺利浏览自己主页的帖子，直到结束
+5. 在手机浏览器访问：[https://httpbin.org/json](https://httpbin.org/json)，如果出现success=true，说明配置成功
+6. 打开小红书APP进入个人主页，先强制下拉刷新一次，然后按顺序浏览自己主页的帖子，直到结束。即可将帖子内容存储到你的leancloud账户上
 
 # 修改web项目配置
 - 修改src目录下 [main.js](https://github.com/zmqcherish/redbook-web/blob/main/src/main.js)文件中的配置，包括leancloud准备工作中的AppID、AppKey和服务器地址serverURLs

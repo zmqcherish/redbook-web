@@ -32,8 +32,8 @@
 		<template #item="{ item }">
 			<div class="card">
 				<LazyImg :url="item.cover" @click="clickImage(item)" />
-				<div class="card-body" @click="clickPage(item)">
-					<div class="card-title" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">
+				<div class="card-body" @click="clickPage(item)" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+					<div class="card-title">
 						{{ item.display_title }}</div>
 				</div>
 			</div>
@@ -42,6 +42,21 @@
 	<a v-if="hasMore" class="btn text-white mt-2" style="background-color: #55acee;" role="button" @click="pageChange">
 		更多
 	</a>
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-scrollable" style="text-align: left;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">{{ selectedContent.title }}</h5>
+					<button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+				</div>
+				
+				<div class="modal-body" style="white-space: pre-wrap;">{{ selectedContent.detail }}</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -81,6 +96,8 @@
 						rowPerView: 2,
 					},
 				},
+				contentModalVisible: true,
+				selectedContent: {},
 			};
 		},
 		methods: {
@@ -109,13 +126,25 @@
 				});
 			},
 			clickPage(page) {
-				window.open(
-					"https://www.xiaohongshu.com/discovery/item/" + page.id,
-					"_blank"
-				);
+				if (page.has_detail) {
+					this.contentModalVisible = true;
+					page.detail = page.detail.replaceAll("[话题]#", "");
+					this.selectedContent = page;
+				} else {
+					window.open(
+						"https://www.xiaohongshu.com/discovery/item/" + page.id,
+						"_blank"
+					);
+				}
 			},
 			clickImage(item) {
-				console.log(item);
+				if (item.type == 'video') {
+					window.open(
+						"https://www.xiaohongshu.com/discovery/item/" + item.id,
+						"_blank"
+					);
+					return;
+				}
 				this.$viewerApi({
 					images: item.imgUrls,
 					options: {
