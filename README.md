@@ -94,3 +94,7 @@ npm run build
 # 免责声明
 - 此项目仅用于学习研究，不保证其合法性、准确性、有效性，请根据情况自行判断，本人对此不承担任何保证责任。
 - 请勿将此项目用于任何商业或非法目的，若违反规定请自行对此负责。
+
+# 联系方式
+- [小红书](https://www.xiaohongshu.com/user/profile/5d20bde80000000010013003)
+- [微博](https://weibo.com/zmqcherish)
